@@ -6,6 +6,8 @@ import Skills from './home/Skills';
 import MyProject from './home/MyProject';
 import MyExperience from './home/MyExperience';
 import Service from './home/Service';
+import Newslatter from './home/Newslatter';
+import ContactMe from './home/ContactMe';
 
 const Homes = () => {
     return (
@@ -16,6 +18,8 @@ const Homes = () => {
            <MyProject/>
            <MyExperience/>
            {/* <Service/> */}
+           <Newslatter/>
+           <ContactMe/>
         </div>
     );
 };

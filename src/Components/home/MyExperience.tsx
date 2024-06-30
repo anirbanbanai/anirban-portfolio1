@@ -3,7 +3,7 @@ import { FcMindMap, FcRating, FcProcess } from 'react-icons/fc';
 
 const MyExperience = () => {
     return (
-        <div className=" md:flex gap-3 justify-between experience m-5 p-5 w-3/4 mx-auto">
+        <div className="max-w-7xl md:flex gap-3 justify-between experience m-5 p-5 w-3/4 mx-auto">
             <div className='flex mt-2 nnn1 items-center gap-2'>
                 <div>
                     <h1><FcRating className='text-3xl' /></h1>
