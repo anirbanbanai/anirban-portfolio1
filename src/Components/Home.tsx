@@ -11,7 +11,7 @@ import ContactMe from './home/ContactMe';
 
 const Homes = () => {
     return (
-        <div>
+        <div className='bgbg'>
            <Section1/>
            <Section2/>
            <Skills/>
