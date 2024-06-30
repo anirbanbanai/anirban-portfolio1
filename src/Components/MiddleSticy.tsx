@@ -4,8 +4,9 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { HiOutlineSun } from "react-icons/hi";
 import ScrollButton from "./ScrollButton";
 
-const MiddleSticy: React.FC = () => {
-    const [theme, setTheme] = useState<string>(localStorage.getItem('theme') || "autumn");
+const AllNormal: React.FC = () => {
+    const [theme, setTheme] = useState<string>("autumn");
+    const [isMounted, setIsMounted] = useState(false);
 
     const handleToggle = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.checked) {
@@ -16,12 +17,21 @@ const MiddleSticy: React.FC = () => {
     };
 
     useEffect(() => {
-        localStorage.setItem("theme", theme);
-        const localTheme = localStorage.getItem("theme");
-        if (localTheme) {
-            document.querySelector("html")?.setAttribute("data-theme", localTheme);
+        setIsMounted(true);
+        if (isMounted) {
+            const localTheme = localStorage.getItem("theme");
+            if (localTheme) {
+                setTheme(localTheme);
+            }
         }
-    }, [theme]);
+    }, [isMounted]);
+
+    useEffect(() => {
+        if (isMounted) {
+            localStorage.setItem("theme", theme);
+            document.querySelector("html")?.setAttribute("data-theme", theme);
+        }
+    }, [theme, isMounted]);
 
     return (
         <div className='tggl p-4 top-2/4 right-0 fixed z-10'>
@@ -35,4 +45,4 @@ const MiddleSticy: React.FC = () => {
     );
 };
 
-export default MiddleSticy;
+export default AllNormal;
