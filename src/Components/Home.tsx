@@ -20,6 +20,12 @@ const Homes = () => {
            {/* <Service/> */}
            <Newslatter/>
            <ContactMe/>
+           <div>
+            <h2>Yes</h2>
+            <h3>Yes</h3>
+            <h4>yes</h4>
+            <h5>yes</h5>
+           </div>
         </div>
     );
 };
